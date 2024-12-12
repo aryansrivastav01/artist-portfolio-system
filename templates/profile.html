@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Profile</h1>
+<h2>Uploaded Images</h2>
+{% for image in images %}
+    <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" alt="User Image" width="200">
+{% endfor %}
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
